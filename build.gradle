@@ -1,17 +1,22 @@
-
 buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:1.2.3'
-    }
+  ext.kotlin_version = '1.5.30-RC'
+  repositories {
+    mavenCentral()
+    google()
+  }
+  dependencies {
+    classpath 'com.android.tools.build:gradle:4.2.0'
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+  }
 }
 
 allprojects {
-    repositories {
-        jcenter()
-        maven { url 'http://repo.kontakt.io/repository/internal/' }
-        maven { url 'http://repo.kontakt.io/repository/snapshots/' }
+  repositories {
+    mavenCentral()
+    maven {
+      url "https://maven.google.com"
     }
+    google()
+  }
+
 }
